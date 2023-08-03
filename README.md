@@ -1,3 +1,11 @@
+# 수정내역
+`2023.08.03`
+1. 영상에서 오디오를 분리 하여 작업 하도록 수정하였습니다.(디폴트:True)
+2. 최초 모델을 medium으로 선택 하도록 하였습니다. 메모리 관련 하여 선택 하였습니다.
+3. 자막 생성시 공백이 생기는 현상을 제거 하였습니다.
+4. transfer to english 관련 버튼을 medium 기준으로 하여 최초에는 보이지 않게 설정 하였습니다.(large에서만 보입니다.)
+
+
 # Whisper-WebUI-Kr
 자동으로 자막을 생성을 쉽게 제공 해주는 UI입니다.
 % 추가적으로 요구사항을 수용 해보려고 fork하였습니다.
@@ -32,16 +40,14 @@ FFmpeg설치후 **반드시 `FFmpeg/bin` folder to your PATH설정!!**
 ## Automatic Installation
 If you have satisfied the prerequisites listed above, you are now ready to start Whisper-WebUI-Kr.
 
-1. Run `Install.bat` from Windows Explorer as a regular, non-administrator user.
-2. After installation, run the `start-webui.bat`. (It will automatically download the model if it is not already installed.)
-3. Open your web browser and go to `http://localhost:7860`
+1. 설치경로로 이동하여 `Install.bat` 수행합니다.
+2. 1번 설치후 `start-webui.bat`. 수행합니다. 최초 모델 다운로드 시간이 소요됩니다.(각각 모델별로.)
+3. 브라우저에서 `http://localhost:7860` 으로 이동합니다.
 
-( If you're running another Web-UI, it will be hosted on a different port , such as `localhost:7861`, `localhost:7862`, and so on )
+( 다른 Web-UI를 실행 중인 경우 `localhost:7861`, `localhost:7862` 등과 같은 다른 포트에서 호스팅됩니다. )
 
-# Available models
-
+# 사용가능한 모델 
 The WebUI uses the Open AI Whisper model
-
 |  Size  | Parameters | English-only model | Multilingual model | Required VRAM | Relative speed |
 |:------:|:----------:|:------------------:|:------------------:|:-------------:|:--------------:|
 |  tiny  |    39 M    |     `tiny.en`      |       `tiny`       |     ~1 GB     |      ~32x      |
@@ -50,6 +56,6 @@ The WebUI uses the Open AI Whisper model
 | medium |   769 M    |    `medium.en`     |      `medium`      |     ~5 GB     |      ~2x       |
 | large  |   1550 M   |        N/A         |      `large`       |    ~10 GB     |       1x       |
 
-
-`.en` models are for English only, and the cool thing is that you can use the `Translate to English` option from the "large" models!
-
+`.en` models are for English only, and the cool thing is that you can use the `Translate to English` option from the `large` models!
+# 참고사항
+ex) C:\Users\win10\AppData\Local\Temp\gradio 아래 임시파일들이 생성이 됩니다.

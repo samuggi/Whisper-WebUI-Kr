@@ -47,7 +47,7 @@ with block:
                                       value="korean", label="Language")
                 dd_subformat = gr.Dropdown(["SRT", "WebVTT"], value="SRT", label="Subtitle Format")
             with gr.Row():
-                cb_translate = gr.Checkbox(value=False, label="Translate to English?", interactive=True)
+                cb_translate = gr.Checkbox(visible=False, value=False, label="Translate to English?", interactive=True)
             with gr.Row():
                 btn_run = gr.Button("GENERATE SUBTITLE FILE", variant="primary")
             with gr.Row():
@@ -74,7 +74,7 @@ with block:
                                       value="korean", label="Language")
                 dd_subformat = gr.Dropdown(choices=["SRT", "WebVTT"], value="SRT", label="Subtitle Format")
             with gr.Row():
-                cb_translate = gr.Checkbox(value=False, label="Translate to English?", interactive=True)
+                cb_translate = gr.Checkbox(visible=False, value=False, label="Translate to English?", interactive=True)
             with gr.Row():
                 btn_run = gr.Button("GENERATE SUBTITLE FILE", variant="primary")
             with gr.Row():
@@ -98,7 +98,7 @@ with block:
                                       value="korean", label="Language")
                 dd_subformat = gr.Dropdown(["SRT", "WebVTT"], value="SRT", label="Subtitle Format")
             with gr.Row():
-                cb_translate = gr.Checkbox(value=False, label="Translate to English?", interactive=True)
+                cb_translate = gr.Checkbox(visible=False, value=False, label="Translate to English?", interactive=True)
             with gr.Row():
                 btn_run = gr.Button("GENERATE SUBTITLE FILE", variant="primary")
             with gr.Row():
@@ -119,8 +119,8 @@ with block:
                 with gr.Row():
                     dd_nllb_model = gr.Dropdown(label="Model", value=nllb_inf.default_model_size,
                                                 choices=nllb_inf.available_models)
-                    dd_nllb_sourcelang = gr.Dropdown(label="Source Language", choices=nllb_inf.available_source_langs)
-                    dd_nllb_targetlang = gr.Dropdown(label="Target Language", choices=nllb_inf.available_target_langs)
+                    dd_nllb_sourcelang = gr.Dropdown(label="Source Language", choices=nllb_inf.available_source_langs, value="korean")
+                    dd_nllb_targetlang = gr.Dropdown(label="Target Language", choices=nllb_inf.available_target_langs, value="english")
                 with gr.Row():
                     btn_run = gr.Button("TRANSLATE SUBTITLE FILE", variant="primary")
                 with gr.Row():
