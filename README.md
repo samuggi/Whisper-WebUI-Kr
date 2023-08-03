@@ -1,17 +1,18 @@
-# Whisper-WebUI
-A Gradio-based browser interface for Whisper. You can use it as an Easy Subtitle Generator!
+# Whisper-WebUI-Kr
+자동으로 자막을 생성을 쉽게 제공 해주는 UI입니다.
+% 추가적으로 요구사항을 수용 해보려고 fork하였습니다.
 
-![Whisper WebUI](https://github.com/jhj0517/Whsiper-WebUI/blob/master/screenshot.png)
+![Whisper WebUI](https://github.com/samuggi/Whisper-WebUI-Kr/blob/master/screenshot.png)
 
 ## Notebook
-If you wish to try this on Colab, you can do it in [here](https://colab.research.google.com/github/jhj0517/Whisper-WebUI/blob/master/notebook/whisper-webui.ipynb)!
+If you wish to try this on Colab, you can do it in [here](https://colab.research.google.com/github/samuggi/Whisper-WebUI-Kr/blob/master/notebook/whisper-webui.ipynb)!
 
 # Feature
-- Generate subtitles from various sources, including :
+- 생성가능한 소스입니다. :
   - Files
   - Youtube
   - Microphone
-- Currently supported subtitle formats : 
+- 결과물 제공 하는 자막 포맷 : 
   - SRT
   - WebVTT
 - Speech to Text Translation
@@ -26,10 +27,10 @@ Please follow the links below to install the necessary software:
 - python : [https://www.python.org/downloads/](https://www.python.org/downloads/)
 - FFmpeg :  [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
 
-After installing FFmpeg, **make sure to add the `FFmpeg/bin` folder to your system PATH!**
+FFmpeg설치후 **반드시 `FFmpeg/bin` folder to your PATH설정!!**
 
 ## Automatic Installation
-If you have satisfied the prerequisites listed above, you are now ready to start Whisper-WebUI.
+If you have satisfied the prerequisites listed above, you are now ready to start Whisper-WebUI-Kr.
 
 1. Run `Install.bat` from Windows Explorer as a regular, non-administrator user.
 2. After installation, run the `start-webui.bat`. (It will automatically download the model if it is not already installed.)

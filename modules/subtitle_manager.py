@@ -27,7 +27,7 @@ def get_srt(segments):
     for i, segment in enumerate(segments):
         output += f"{i + 1}\n"
         output += f"{timeformat_srt(segment['start'])} --> {timeformat_srt(segment['end'])}\n"
-        output += f"{segment['text']}\n\n"
+        output += f"{segment['text'].strip()}\n\n"
     return output
 
 
@@ -36,7 +36,7 @@ def get_vtt(segments):
     for i, segment in enumerate(segments):
         output += f"{i + 1}\n"
         output += f"{timeformat_vtt(segment['start'])} --> {timeformat_vtt(segment['end'])}\n"
-        output += f"{segment['text']}\n\n"
+        output += f"{segment['text'].strip()}\n\n"
     return output
 
 
