@@ -5,6 +5,7 @@ from modules.youtube_manager import get_ytdata, get_ytaudio
 import gradio as gr
 import os
 from datetime import datetime
+import moviepy.editor as mp
 
 DEFAULT_MODEL_SIZE = "large-v2"
 
@@ -17,7 +18,7 @@ class WhisperInference(BaseInterface):
         self.available_models = whisper.available_models()
         self.available_langs = sorted(list(whisper.tokenizer.LANGUAGES.values()))
 
-    def transcribe_file(self, fileobjs,
+    def transcribe_file(self, fileobjs, audio_div,
                         model_size, lang, subformat, istranslate,
                         progress=gr.Progress()):
 
@@ -38,7 +39,15 @@ class WhisperInference(BaseInterface):
             files_info = {}
             for fileobj in fileobjs:
 
-                audio = whisper.load_audio(fileobj.name)
+                if audio_div:
+                    print(f'fileobj.name:{fileobj.name}')
+                    clip = mp.VideoFileClip(fileobj.name)
+                    tempFileAr = os.path.splitext(fileobj.name)
+                    clip.audio.write_audiofile(tempFileAr[0]+".mp3")
+                    audio = whisper.load_audio(tempFileAr[0]+".mp3")
+                    clip.close()
+                else:
+                    audio = whisper.load_audio(fileobj.name)
 
                 translatable_model = ["large", "large-v1", "large-v2"]
                 if istranslate and self.current_model_size in translatable_model:
@@ -67,8 +76,8 @@ class WhisperInference(BaseInterface):
 
             total_result = ''
             for file_name, subtitle in files_info.items():
-                total_result += '------------------------------------\n'
                 total_result += f'{file_name}\n\n'
+                total_result += '------------------------------------\n'
                 total_result += f'{subtitle}'
 
             return f"Done! Subtitle is in the outputs folder.\n\n{total_result}"
@@ -76,7 +85,14 @@ class WhisperInference(BaseInterface):
             return f"Error: {str(e)}"
         finally:
             self.release_cuda_memory()
-            self.remove_input_files([fileobj.name for fileobj in fileobjs])
+            if audio_div:
+                self.remove_input_files([fileobj.name for fileobj in fileobjs])
+                mp3_file_path = os.path.splitext(fileobj.name)[0]+".mp3"
+                if os.path.exists(mp3_file_path):                
+                    print(f'mp3_file_path:{mp3_file_path}')
+                    os.remove(mp3_file_path)
+            else:
+                self.remove_input_files([fileobj.name for fileobj in fileobjs])
 
     def transcribe_youtube(self, youtubelink,
                            model_size, lang, subformat, istranslate,

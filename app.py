@@ -40,6 +40,8 @@ with block:
             with gr.Row():
                 input_file = gr.Files(type="file", label="Upload File here")
             with gr.Row():
+                cbtn_audio_div = gr.Checkbox(value=True, label="Audio Div?", interactive=True)
+            with gr.Row():
                 dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="large-v2", label="Model")
                 dd_lang = gr.Dropdown(choices=["Automatic Detection"] + whisper_inf.available_langs,
                                       value="Automatic Detection", label="Language")
@@ -53,7 +55,7 @@ with block:
                 btn_openfolder = gr.Button('📂', scale=2)
 
             btn_run.click(fn=whisper_inf.transcribe_file,
-                          inputs=[input_file, dd_model, dd_lang, dd_subformat, cb_translate], outputs=[tb_indicator])
+                          inputs=[input_file, cbtn_audio_div, dd_model, dd_lang, dd_subformat, cb_translate], outputs=[tb_indicator])
             btn_openfolder.click(fn=lambda: open_folder("outputs"), inputs=None, outputs=None)
             dd_model.change(fn=on_change_models, inputs=[dd_model], outputs=[cb_translate])
 
