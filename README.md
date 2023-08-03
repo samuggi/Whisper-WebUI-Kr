@@ -1,7 +1,7 @@
 # 수정내역
 `2023.08.03`
 1. 영상에서 오디오를 분리 하여 작업 하도록 수정하였습니다.(디폴트:True)
-2. 최초 모델을 medium으로 선택 하도록 하였습니다. 메모리 관련 하여 선택 하였습니다.
+2. 최초 모델을 medium으로 선택 하도록 하였습니다. 메모리 확인후 디폴트 설정 하는것이 좋아 보입니다.
 3. 자막 생성시 공백이 생기는 현상을 제거 하였습니다.
 4. transfer to english 관련 버튼을 medium 기준으로 하여 최초에는 보이지 않게 설정 하였습니다.(large에서만 보입니다.)
 
@@ -59,4 +59,4 @@ The WebUI uses the Open AI Whisper model
 `.en` models are for English only, and the cool thing is that you can use the `Translate to English` option from the `large` models!
 
 # 참고사항
-ex) C:\Users\win10\AppData\Local\Temp\gradio 아래 임시파일들이 생성이 됩니다.
+ex) C:\Users\{본인계정}\AppData\Local\Temp\gradio 아래 임시파일들이 생성이 됩니다.

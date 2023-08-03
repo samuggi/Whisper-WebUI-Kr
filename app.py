@@ -40,7 +40,7 @@ with block:
             with gr.Row():
                 input_file = gr.Files(type="file", label="Upload File here")
             with gr.Row():
-                cbtn_audio_div = gr.Checkbox(value=True, label="Audio Div?", interactive=True)
+                cbtn_audio_div = gr.Checkbox(label="Audio Div?", interactive=True)
             with gr.Row():
                 dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="medium", label="Model")
                 dd_lang = gr.Dropdown(choices=["Automatic Detection"] + whisper_inf.available_langs,
