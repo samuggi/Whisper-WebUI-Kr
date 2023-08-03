@@ -22,7 +22,7 @@ If you wish to try this on Colab, you can do it in [here](https://colab.research
 ## Prerequisite
 To run Whisper, you need to have `git`, `python` version 3.8 ~ 3.10 and `FFmpeg`.
 
-Please follow the links below to install the necessary software:
+필요한 소프트웨어를 설치하려면 아래 링크를 따르십시오.: (존재 할 경우 패스가능)
 - git : [https://git-scm.com/downloads](https://git-scm.com/downloads)
 - python : [https://www.python.org/downloads/](https://www.python.org/downloads/)
 - FFmpeg :  [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
