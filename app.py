@@ -42,9 +42,9 @@ with block:
             with gr.Row():
                 cbtn_audio_div = gr.Checkbox(value=True, label="Audio Div?", interactive=True)
             with gr.Row():
-                dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="large-v2", label="Model")
+                dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="medium", label="Model")
                 dd_lang = gr.Dropdown(choices=["Automatic Detection"] + whisper_inf.available_langs,
-                                      value="Automatic Detection", label="Language")
+                                      value="korean", label="Language")
                 dd_subformat = gr.Dropdown(["SRT", "WebVTT"], value="SRT", label="Subtitle Format")
             with gr.Row():
                 cb_translate = gr.Checkbox(value=False, label="Translate to English?", interactive=True)
@@ -69,9 +69,9 @@ with block:
                     tb_title = gr.Label(label="Youtube Title")
                     tb_description = gr.Textbox(label="Youtube Description", max_lines=15)
             with gr.Row():
-                dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="large-v2", label="Model")
+                dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="medium", label="Model")
                 dd_lang = gr.Dropdown(choices=["Automatic Detection"] + whisper_inf.available_langs,
-                                      value="Automatic Detection", label="Language")
+                                      value="korean", label="Language")
                 dd_subformat = gr.Dropdown(choices=["SRT", "WebVTT"], value="SRT", label="Subtitle Format")
             with gr.Row():
                 cb_translate = gr.Checkbox(value=False, label="Translate to English?", interactive=True)
@@ -93,9 +93,9 @@ with block:
             with gr.Row():
                 mic_input = gr.Microphone(label="Record with Mic", type="filepath", interactive=True)
             with gr.Row():
-                dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="large-v2", label="Model")
+                dd_model = gr.Dropdown(choices=whisper_inf.available_models, value="medium", label="Model")
                 dd_lang = gr.Dropdown(choices=["Automatic Detection"] + whisper_inf.available_langs,
-                                      value="Automatic Detection", label="Language")
+                                      value="korean", label="Language")
                 dd_subformat = gr.Dropdown(["SRT", "WebVTT"], value="SRT", label="Subtitle Format")
             with gr.Row():
                 cb_translate = gr.Checkbox(value=False, label="Translate to English?", interactive=True)
