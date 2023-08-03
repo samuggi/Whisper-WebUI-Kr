@@ -57,5 +57,6 @@ The WebUI uses the Open AI Whisper model
 | large  |   1550 M   |        N/A         |      `large`       |    ~10 GB     |       1x       |
 
 `.en` models are for English only, and the cool thing is that you can use the `Translate to English` option from the `large` models!
+
 # 참고사항
 ex) C:\Users\win10\AppData\Local\Temp\gradio 아래 임시파일들이 생성이 됩니다.
